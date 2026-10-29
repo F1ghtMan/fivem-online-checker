@@ -129,7 +129,7 @@
 
         async function fetchServerData(serverId) {
             // Официальный публичный API FiveM (фронтенд-сервер)
-            const url = `https://servers-frontend.fivem.net/api/servers/single/${encodeURIComponent(serverId)}`;
+            const url = `https://fivem-sl-api.onrender.com/fetchServerByEndPoint/${serverId}`;
 
             const response = await fetch(url);
             if (!response.ok) {
