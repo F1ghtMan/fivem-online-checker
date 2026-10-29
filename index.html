@@ -129,7 +129,9 @@
 
         async function fetchServerData(serverId) {
             // Официальный публичный API FiveM (фронтенд-сервер)
-            const url = `https://fivem-sl-api.onrender.com/fetchServerByEndPoint/${serverId}`;
+            const originalUrl = `https://servers-frontend.fivem.net/api/servers/single/${encodeURIComponent(serverId)}`;
+            // Оборачиваем его в прокси corsproxy.io
+            const url = `https://corsproxy.io/?url=${encodeURIComponent(originalUrl)}`;
 
             const response = await fetch(url);
             if (!response.ok) {
