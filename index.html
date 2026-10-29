@@ -131,7 +131,7 @@
             // Официальный публичный API FiveM (фронтенд-сервер)
             const originalUrl = `https://servers-frontend.fivem.net/api/servers/single/${encodeURIComponent(serverId)}`;
             // Оборачиваем его в прокси corsproxy.io
-            const url = `https://corsproxy.io/?url=${encodeURIComponent(originalUrl)}`;
+            const url = `https://corsproxy.io/?key=af725d65&url=${encodeURIComponent(originalUrl)}`;
 
             const response = await fetch(url);
             if (!response.ok) {
